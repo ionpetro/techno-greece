@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Techno from "../public/images/techno.jpeg";
-import styles from "./Home.module.css";
+import styles from "./Home.module.scss";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -17,7 +17,6 @@ const Home = () => {
       fetchEvents();
       setData(data.response);
     } catch (e) {
-      n;
       console.log(e);
     }
   }, []);
