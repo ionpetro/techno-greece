@@ -19,26 +19,56 @@ export default async function handler(req, res) {
     await autoScroll(page);
 
     const result = await page.evaluate(() => {
+      const events = [];
       const list = document.querySelector(
         "section > div > div > :last-child > div > ul.grid"
       );
 
       const dates = list.querySelector(":first-child").children;
       // remove ads
-      const dates_array = Array.from(dates).filter(
+      const datesArray = Array.from(dates).filter(
         (node) => !node.innerHTML.includes("adSlot")
       );
 
       // for each date node, I want to retrieve the event info and add
       // the date as an attribute
-      return dates_array.map((node) => {
+      datesArray.forEach((node) => {
         const dateText = node
           .querySelector("div > h3 > span")
           .textContent.replace("/", "");
-        return new Date(`${dateText} 2023`).toString();
+        const date = new Date(
+          `${dateText} ${new Date().getFullYear()}`
+        ).toString();
+
+        // remove the date node and hold the event nodes
+        const eventsOfDay = Array.from(node.children);
+        eventsOfDay.shift();
+
+        // loop through the events of the day
+        eventsOfDay.forEach((eventNode) => {
+          const title = eventNode.querySelector(
+            "ul .grid > li > div > h3"
+          ).textContent;
+
+          // check if dj info is missing
+          const dj =
+            eventNode.querySelector("ul .grid > li > div").children.length === 3
+              ? eventNode.querySelector("ul .grid > li > div > :nth-child(2)")
+                  .textContent
+              : null;
+          const location = eventNode.querySelector(
+            "ul .grid > li > div > :last-child > div > div"
+          ).textContent;
+          const image_url = eventNode.querySelector("img").getAttribute("src");
+          events.push({ title, location, dj, image_url, date });
+        });
       });
+
+      return events;
     });
 
+    // insert to supabase
+    await supabase.from("events").insert(result);
     res.status(200).json({ response: result });
     await browser.close();
   } catch (e) {
