@@ -68,7 +68,7 @@ export default async function handler(req, res) {
     });
 
     // insert to supabase
-    await supabase.from("events").insert(result);
+    await supabase.from("events").upsert(result);
     res.status(200).json({ response: result });
     await browser.close();
   } catch (e) {
