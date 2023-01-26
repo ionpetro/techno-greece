@@ -1,0 +1,45 @@
+.section {
+  & > :first-child {
+    margin-top: -48px;
+  }
+}
+
+.events {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px;
+  margin-bottom: 24px;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.date {
+  color: grey;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 48px 0 24px 0;
+}
+
+.card {
+  border-radius: 18px;
+  width: 100%;
+  height: 164px;
+  background-color: #000dff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cardBody {
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 18px;
+  font-size: 1.2rem;
+
+  h3 {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+}

@@ -1,8 +1,9 @@
 import axios from "axios";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { prepareEvents } from "../lib/prepareEvents";
-import Techno from "../public/images/techno.jpeg";
+import { prepareEvents } from "../../lib/prepareEvents";
+import Techno from "../../public/images/techno.jpeg";
+import Events from "../events/Events";
 import styles from "./Home.module.scss";
 
 const Home = () => {
@@ -25,7 +26,7 @@ const Home = () => {
 
   return (
     <>
-      <div className={styles.wrapper}>
+      <div className={styles.hero}>
         <Image
           alt={"techno"}
           layout={"fill"}
@@ -44,28 +45,33 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <div>
-        {Object.entries(data).map(([date, events]) => (
-          <div key={date}>
-            <div>{date}</div>
-            <div className={styles.events}>
-              {events.map(({ id, title, location, dj, image_url }) => (
-                <div key={id}>
-                  <h1>{title}</h1>
-                  <div>{location}</div>
-                  <div>{dj}</div>
-                  <Image
-                    width={"300"}
-                    height={"300"}
-                    src={image_url}
-                    alt={title}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
+      <div className={styles.wrapper}>
+        <h2>Events</h2>
+        <Events data={data} />
       </div>
+      <div className={styles.promoWrapper}>
+        <span className={styles.alien}>👽</span>
+        <div>
+          Promo of <span className={styles.techno}>T</span>echno
+        </div>
+        <div className={styles.actions}>
+          <button
+            className={styles.button}
+            onClick={() => (location.href = "mailto:technogreece0@gmail.com")}
+          >
+            <span>Email</span>
+          </button>
+          <button
+            className={styles.button}
+            onClick={() =>
+              (location.href = "https://www.instagram.com/techno__greece/")
+            }
+          >
+            <span>Instagram</span>
+          </button>
+        </div>
+      </div>
+      <div className={styles.footer}>© 2023 Techno Greece</div>
     </>
   );
 };
