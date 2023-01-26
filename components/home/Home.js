@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { prepareEvents } from "../../lib/prepareEvents";
 import Techno from "../../public/images/techno.jpeg";
 import Events from "../events/Events";
+import Footer from "../footer/Footer";
 import styles from "./Home.module.scss";
 
 const Home = () => {
@@ -49,29 +50,7 @@ const Home = () => {
         <h2>Events</h2>
         <Events data={data} />
       </div>
-      <div className={styles.promoWrapper}>
-        <span className={styles.alien}>👽</span>
-        <div>
-          Promo of <span className={styles.techno}>T</span>echno
-        </div>
-        <div className={styles.actions}>
-          <button
-            className={styles.button}
-            onClick={() => (location.href = "mailto:technogreece0@gmail.com")}
-          >
-            <span>Email</span>
-          </button>
-          <button
-            className={styles.button}
-            onClick={() =>
-              (location.href = "https://www.instagram.com/techno__greece/")
-            }
-          >
-            <span>Instagram</span>
-          </button>
-        </div>
-      </div>
-      <div className={styles.footer}>© 2023 Techno Greece</div>
+      <Footer />
     </>
   );
 };
