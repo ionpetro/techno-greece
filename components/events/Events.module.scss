@@ -1,4 +1,5 @@
 .section {
+  position: relative;
   & > :first-child {
     margin-top: -48px;
   }
@@ -8,7 +9,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 
   @media only screen and (max-width: 600px) {
     grid-template-columns: 1fr;
@@ -16,6 +17,10 @@
 }
 
 .date {
+  position: sticky;
+  top: 0;
+  padding: 4px 0;
+  background-color: black;
   color: grey;
   font-size: 2rem;
   font-weight: 700;

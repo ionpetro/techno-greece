@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   const supabase = createClient(supabaseUrl, supabaseKey);
 
   try {
-    const browser = await puppeteer.launch({ headless: false }); // default is true
+    const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
     await page.setViewport({
       width: 1290,
@@ -59,7 +59,13 @@ export default async function handler(req, res) {
           const location = eventNode.querySelector(
             "ul .grid > li > div > :last-child > div > div"
           ).textContent;
-          const image_url = eventNode.querySelector("img").getAttribute("src");
+
+          // check if there is an image
+          const image_node = eventNode.querySelector("img");
+          let image_url = "";
+          if (image_node) {
+            image_url = image_node.getAttribute("src");
+          }
           events.push({ title, location, dj, image_url, date });
         });
       });
