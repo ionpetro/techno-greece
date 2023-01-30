@@ -44,7 +44,7 @@
   text-transform: uppercase;
   font-weight: 700;
   position: relative;
-  text-shadow: 0.04em 0.03em 0 #000dff, -0.03em -0.04em 0 #af40ff;
+  text-shadow: 0.04em 0.03em 0 #000dff, -0.03em -0.04em 0 rgba(187, 38, 184, 1);
   animation: glitchColors 6000ms infinite linear;
   margin: -200px 0 0 0;
 
@@ -76,7 +76,7 @@
   bottom: -40px;
   right: 8%;
   animation: none;
-  text-shadow: 0.05em 0 0 #000dff, -0.03em -0.04em 0 #af40ff;
+  text-shadow: 0.05em 0 0 #000dff, -0.03em -0.04em 0 rgba(187, 38, 184, 1);
   transform: rotate(-6deg) scale(0.8, 0.8);
 
   @media only screen and (max-width: 600px) {
@@ -92,7 +92,8 @@
 
   h2 {
     font-size: 4rem;
-    text-shadow: 0.04em 0.03em 0 #000dff, -0.03em -0.04em 0 #af40ff;
+    text-shadow: 0.04em 0.03em 0 #000dff,
+      -0.03em -0.04em 0 rgba(187, 38, 184, 1);
   }
 
   @media only screen and (max-width: 600px) {
@@ -103,37 +104,40 @@
 
 @keyframes glitchColors {
   0% {
-    text-shadow: 0.05em 0 0 #000dff, -0.03em -0.04em 0 #af40ff;
+    text-shadow: 0.05em 0 0 #000dff, -0.03em -0.04em 0 rgba(187, 38, 184, 1);
   }
   4% {
-    text-shadow: -0.05em -0.025em 0 #000dff, 0.025em 0.035em 0 #af40ff;
+    text-shadow: -0.05em -0.025em 0 #000dff,
+      0.025em 0.035em 0 rgba(187, 38, 184, 1);
   }
   5% {
-    text-shadow: 0.05em 0 0 #000dff, -0.03em -0.04em 0 #af40ff;
+    text-shadow: 0.05em 0 0 #000dff, -0.03em -0.04em 0 rgba(187, 38, 184, 1);
   }
   35% {
-    text-shadow: 0.05em 0 0 #000dff, -0.03em -0.04em 0 #af40ff;
+    text-shadow: 0.05em 0 0 #000dff, -0.03em -0.04em 0 rgba(187, 38, 184, 1);
   }
   36% {
-    text-shadow: -0.05em -0.025em 0 #000dff, 0.025em 0.035em 0 #af40ff;
+    text-shadow: -0.05em -0.025em 0 #000dff,
+      0.025em 0.035em 0 rgba(187, 38, 184, 1);
   }
   37% {
-    text-shadow: 0.05em 0 0 #000dff, -0.03em -0.04em 0 #af40ff;
+    text-shadow: 0.05em 0 0 #000dff, -0.03em -0.04em 0 rgba(187, 38, 184, 1);
   }
   94% {
-    text-shadow: 0.05em 0 0 #000dff, -0.03em -0.04em 0 #af40ff;
+    text-shadow: 0.05em 0 0 #000dff, -0.03em -0.04em 0 rgba(187, 38, 184, 1);
   }
   95% {
-    text-shadow: -0.05em -0.025em 0 #000dff, 0.025em 0.035em 0 #af40ff;
+    text-shadow: -0.05em -0.025em 0 #000dff,
+      0.025em 0.035em 0 rgba(187, 38, 184, 1);
   }
   96% {
-    text-shadow: 0.05em 0.035em 0 #000dff, 0.03em 0 0 #af40ff;
+    text-shadow: 0.05em 0.035em 0 #000dff, 0.03em 0 0 rgba(187, 38, 184, 1);
   }
   98% {
-    text-shadow: 0.05em 0.035em 0 #000dff, 0.03em 0 0 #af40ff;
+    text-shadow: 0.05em 0.035em 0 #000dff, 0.03em 0 0 rgba(187, 38, 184, 1);
   }
   100% {
-    text-shadow: -0.05em 0 0 #000dff, -0.025em -0.04em 0 #af40ff;
+    text-shadow: -0.05em 0 0 #000dff, -0.025em -0.04em 0 rgba(187, 38, 184, 1);
   }
 }
 

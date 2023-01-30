@@ -3,17 +3,25 @@ import { formatDate } from "../../lib/formatDate";
 import styles from "./Events.module.scss";
 
 const Events = ({ data }) => {
+  const sortedData = Object.entries(data).sort(
+    ([date1], [date2]) => new Date(date1).getTime() > new Date(date2).getTime()
+  );
+
   return (
     <section className={styles.section}>
-      {Object.entries(data).map(([date, events]) => (
+      {sortedData.map(([date, events]) => (
         <div key={date}>
-          <div className={styles.date}>{formatDate(date)}</div>
+          <div className={styles.date}>
+            <span>{formatDate(date).weekday}</span>, {formatDate(date).month}
+          </div>
           <div className={styles.events}>
             {events.map(({ id, title, location, dj, image_url }) => (
               <div key={id}>
                 <div
                   className={styles.card}
-                  style={{ backgroundImage: `url(${image_url})` }}
+                  style={{
+                    backgroundImage: image_url && `url(${image_url})`,
+                  }}
                 />
                 <div className={styles.cardBody}>
                   <h3>{title}</h3>
