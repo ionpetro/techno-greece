@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { formatDate } from "../../lib/formatDate";
 import styles from "./Events.module.scss";
 
-const Events = ({ data }) => {
+const Events = ({ data, all }) => {
+  const [finalData, setFinalData] = useState([]);
+
   const sortedData = Object.entries(data).sort(
     ([date1], [date2]) => new Date(date1).getTime() > new Date(date2).getTime()
   );
 
+  useEffect(() => {
+    console.log(data);
+    if (!Object.keys(data).length) return;
+    if (all) {
+      setFinalData(sortedData);
+    } else {
+      setFinalData([sortedData[0]]);
+    }
+  }, [data]);
+
   return (
     <section className={styles.section}>
-      {sortedData.map(([date, events]) => (
+      {finalData.map(([date, events]) => (
         <div key={date}>
           <div className={styles.date}>
             <span>{formatDate(date).weekday}</span>, {formatDate(date).month}

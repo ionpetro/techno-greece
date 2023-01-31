@@ -1,14 +1,17 @@
 import axios from "axios";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { prepareEvents } from "../../lib/prepareEvents";
 import Techno from "../../public/images/techno.jpeg";
 import Events from "../events/Events";
 import Footer from "../footer/Footer";
+import Button from "../ui/button/Button";
 import styles from "./Home.module.scss";
 
 const Home = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
+  const router = useRouter();
 
   const fetchEvents = async () => {
     const {
@@ -46,9 +49,12 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <div className={styles.wrapper}>
+      <div className="wrapper">
         <h2>Events</h2>
-        <Events data={data} />
+        <Events data={data} all={false} />
+        <div className={styles.buttonWrapper}>
+          <Button onClick={() => router.push("/events")}>All events</Button>
+        </div>
       </div>
       <Footer />
     </>

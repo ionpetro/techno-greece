@@ -66,7 +66,7 @@ export default async function handler(req, res) {
           if (image_node) {
             image_url = image_node.getAttribute("src");
           }
-          events.push({ title, location, dj, image_url, date });
+          events.push({ title, location, dj, image_url, date, origin: "ra" });
         });
       });
 

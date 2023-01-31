@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Button from "../ui/button/Button";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
@@ -22,20 +23,18 @@ const Footer = () => {
           Promo of <span className={styles.techno}>T</span>echno
         </div>
         <div className={styles.actions}>
-          <button
-            className={styles.button}
+          <Button
             onClick={() => (location.href = "mailto:technogreece0@gmail.com")}
           >
-            <span>Email</span>
-          </button>
-          <button
-            className={styles.button}
+            Email
+          </Button>
+          <Button
             onClick={() =>
               (location.href = "https://www.instagram.com/techno__greece/")
             }
           >
-            <span>Instagram</span>
-          </button>
+            Instagram
+          </Button>
         </div>
       </div>
       <div className={styles.footer}>© 2023 Techno Greece</div>
