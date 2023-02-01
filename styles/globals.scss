@@ -24,3 +24,12 @@ body {
     margin: 0 12px;
   }
 }
+
+.heading {
+  margin: 72px auto;
+  font-size: 8rem;
+  text-shadow: 0.04em 0.03em 0 #000dff, -0.03em -0.04em 0 rgba(187, 38, 184, 1);
+  @media only screen and (max-width: 600px) {
+    font-size: 6rem;
+  }
+}

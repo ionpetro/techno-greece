@@ -19,6 +19,10 @@
   touch-action: manipulation;
   white-space: nowrap;
   cursor: pointer;
+
+  @media only screen and (max-width: 600px) {
+    min-width: 110px;
+  }
 }
 
 .button:active,
@@ -33,6 +37,10 @@
   width: 100%;
   height: 100%;
   transition: 300ms;
+
+  @media only screen and (max-width: 600px) {
+    padding: 12px 20px;
+  }
 }
 
 .button:hover span {

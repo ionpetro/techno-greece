@@ -19,9 +19,7 @@ const Footer = () => {
     <div>
       <div className={styles.promoWrapper}>
         <span className={styles.alien}>{emoji}</span>
-        <div>
-          Promo of <span className={styles.techno}>T</span>echno
-        </div>
+        <div>Promo of Techno</div>
         <div className={styles.actions}>
           <Button
             onClick={() => (location.href = "mailto:technogreece0@gmail.com")}

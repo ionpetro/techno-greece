@@ -14,17 +14,12 @@
   );
 
   @media only screen and (max-width: 600px) {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 
 .alien {
   font-size: 2rem;
-}
-
-.techno {
-  display: inline-block;
-  transform: scale(1, -1);
 }
 
 .footer {
