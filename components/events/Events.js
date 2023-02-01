@@ -10,7 +10,6 @@ const Events = ({ data, all }) => {
   );
 
   useEffect(() => {
-    console.log(data);
     if (!Object.keys(data).length) return;
     if (all) {
       setFinalData(sortedData);
