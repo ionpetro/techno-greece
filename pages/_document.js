@@ -15,6 +15,35 @@ export default function Document() {
         />
       </Head>
       <body>
+        <script
+          type="text/javascript"
+          src="//connect.facebook.net/en_US/sdk.js"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(window.fbAsyncInit = (function () {\n" +
+              "              FB.init({\n" +
+              '                appId: "3238400696470513",\n' +
+              "                xfbml: true,\n" +
+              '                version: "v15.0",\n' +
+              "              });\n" +
+              "              FB.AppEvents.logPageView();\n" +
+              "            })(\n" +
+              "              (function (d, s, id) {\n" +
+              "                var js,\n" +
+              "                  fjs = d.getElementsByTagName(s)[0];\n" +
+              "                if (d.getElementById(id)) {\n" +
+              "                  return;\n" +
+              "                }\n" +
+              "                js = d.createElement(s);\n" +
+              "                js.id = id;\n" +
+              '                js.src = "https://connect.facebook.net/en_US/sdk.js";\n' +
+              "                fjs.parentNode.insertBefore(js, fjs);\n" +
+              '              })(document, "script", "facebook-jssdk")\n' +
+              "            ))",
+          }}
+        ></script>
         <Main />
         <NextScript />
       </body>
