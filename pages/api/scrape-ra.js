@@ -1,6 +1,12 @@
-const puppeteer = require("puppeteer");
 import { createClient } from "@supabase/supabase-js";
 import { autoScroll } from "../../utils/autoscroll";
+let puppeteer;
+if (process.env.NODE_ENV === "production") {
+  puppeteer = require("puppeteer-core");
+} else {
+  puppeteer = require("puppeteer");
+}
+const chrome = require("chrome-aws-lambda");
 
 export default async function handler(req, res) {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -8,7 +14,15 @@ export default async function handler(req, res) {
   const supabase = createClient(supabaseUrl, supabaseKey);
 
   try {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch(
+      process.env.NODE_ENV === "production"
+        ? {
+            args: chrome.args,
+            executablePath: await chrome.executablePath,
+            headless: chrome.headless,
+          }
+        : { headless: false }
+    );
     const page = await browser.newPage();
     await page.setViewport({
       width: 1290,
