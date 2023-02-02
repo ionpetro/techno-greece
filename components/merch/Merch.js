@@ -138,6 +138,7 @@ const Merch = () => {
                 <div className={styles.label}>Email</div>
                 <input
                   required
+                  placeholder={"e.g. thecoolest@gmail.com"}
                   className={styles.input}
                   type={"email"}
                   onChange={(e) => setEmail(e.target.value)}

@@ -1,0 +1,140 @@
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: grey;
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-left: 0;
+  margin-bottom: 12px;
+}
+
+.input {
+  color: white;
+  max-width: 280px;
+  margin-bottom: 32px;
+  padding: 12px;
+  background-color: black;
+  border: 1px solid white;
+  font-family: "Alumni Sans", sans-serif;
+  font-size: 1.3rem;
+
+  &:focus {
+    border-image-source: linear-gradient(
+      144deg,
+      rgba(187, 38, 184, 1),
+      #000dff
+    );
+    border-image-slice: 1;
+    outline: none;
+  }
+}
+
+.loader {
+  & > * {
+    font-size: 4px;
+    margin: 0 auto;
+    width: 8px;
+    height: 8px;
+  }
+}
+
+.infoWrapper {
+  background-color: black;
+  display: flex;
+  border: 1px solid white;
+  border-radius: 16px;
+  margin: 0 auto 72px auto;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid1 {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  input {
+    max-width: 100%;
+  }
+}
+
+.info {
+  width: 720px;
+  padding: 32px;
+  margin: auto;
+
+  @media only screen and (max-width: 600px) {
+    width: 90%;
+    padding: 12px 12px 24px 12px;
+  }
+
+  h3 {
+    margin: 12px 0 24px 0;
+    text-transform: capitalize;
+    font-size: 2.2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+
+    span {
+      background: -webkit-linear-gradient(
+        180deg,
+        rgb(145, 31, 143) 0%,
+        rgba(187, 38, 184, 1) 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.success {
+  text-align: center;
+  margin: 120px auto;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+  }
+}
+
+.text {
+  font-size: 1.4rem;
+}
+
+.textarea {
+  color: white;
+  max-width: 720px;
+  margin-bottom: 32px;
+  padding: 12px;
+  background-color: black;
+  border: 1px solid white;
+  font-family: "Alumni Sans", sans-serif;
+  font-size: 1.3rem;
+
+  &:focus {
+    border-image-source: linear-gradient(
+      144deg,
+      rgba(187, 38, 184, 1),
+      #000dff
+    );
+    border-image-slice: 1;
+    outline: none;
+  }
+}

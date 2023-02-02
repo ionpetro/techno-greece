@@ -1,0 +1,55 @@
+.promoWrapper {
+  margin-top: 72px;
+  padding: 24px;
+
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 600;
+  background: linear-gradient(
+    144deg,
+    rgba(0, 13, 255, 1) 0%,
+    rgba(187, 38, 184, 1) 100%
+  );
+
+  @media only screen and (max-width: 600px) {
+    font-size: 2rem;
+  }
+}
+
+.wrap {
+  max-width: 720px;
+  margin: auto;
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+  align-items: center;
+  justify-content: space-around;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+
+    li {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.dj {
+  text-shadow: 0.04em 0.03em 0 #000dff, -0.03em -0.04em 0 rgba(187, 38, 184, 1);
+}
+
+.button {
+  justify-self: end;
+}
+
+.list {
+  font-size: 1.5rem;
+}
+
+.footer {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+}

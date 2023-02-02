@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { prepareEvents } from "../../lib/prepareEvents";
 import Techno from "../../public/images/techno.jpeg";
+import DjInvite from "../djinvite/DjInvite";
 import Events from "../events/Events";
 import Footer from "../footer/Footer";
 import Merch from "../merch/Merch";
@@ -62,6 +63,7 @@ const Home = () => {
           <Button onClick={() => router.push("/events")}>All events</Button>
         </div>
       </div>
+      <DjInvite />
       <Merch />
       <div className="wrapper">
         <News />
