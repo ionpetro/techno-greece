@@ -1,0 +1,63 @@
+.compWrap {
+  position: relative;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+
+  svg {
+    width: 88px;
+    height: 53px;
+    margin-bottom: 8px;
+  }
+
+  h1 {
+    letter-spacing: 10px;
+  }
+}
+
+.image {
+  z-index: 1;
+}
+
+.main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.handle {
+  margin-top: 12px;
+
+  a {
+    font-weight: bold;
+    text-transform: lowercase;
+    color: white;
+  }
+}
+
+.error {
+  text-align: center;
+  padding: 20px;
+  margin: auto;
+}
+
+.media {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 12px;
+
+  @media only screen and (max-width: 1280px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

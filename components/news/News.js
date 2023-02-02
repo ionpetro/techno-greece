@@ -1,5 +1,10 @@
 import axios from "axios";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import UiSpinner from "../ui/UiSpinner/UiSpinner";
+import styles from "./News.module.scss";
+import logo from "../../public/images/technogreececolorlogo.png";
+import SocialCard from "./SocialCard/SocialCard";
 
 const News = () => {
   const mediaCount = 8;
@@ -19,13 +24,13 @@ const News = () => {
         const { data } = await axios.get(
           `https://graph.instagram.com/me/media?fields=media_type,thumbnail_url,media_url,timestamp,permalink,id&access_token=${access_token}`
         );
+
         // const { data } = await axios.get(
         //   `https://graph.instagram.com/17859512528738773/children?fields=media_type,thumbnail_url,media_url&access_token=${access_token}`
         // );
 
-        console.log(data);
         setLoading(false);
-        setMediaArray(data);
+        setMediaArray(data.data);
       } catch (e) {
         setLoading(false);
         setError(true);
@@ -34,7 +39,29 @@ const News = () => {
     fetchMedia();
   }, []);
 
-  return <div>news</div>;
+  return (
+    <section className={styles.compWrap} id={"social"}>
+      <div>
+        <div className={styles.main}>
+          {loading ? (
+            <UiSpinner />
+          ) : error ? (
+            <div className={styles.error}>
+              Something went wrong with Instagram 😔 Click the insta handle
+              above to visit the official page!
+            </div>
+          ) : (
+            <div className={styles.media}>
+              {mediaArray.slice(0, mediaCount).map((media) => (
+                <SocialCard key={media.id} media={media} />
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+      <div className={styles.transitionBot} />
+    </section>
+  );
 };
 
 export default News;

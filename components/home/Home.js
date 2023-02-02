@@ -8,17 +8,21 @@ import Events from "../events/Events";
 import Footer from "../footer/Footer";
 import News from "../news/News";
 import Button from "../ui/button/Button";
+import UiSpinner from "../ui/UiSpinner/UiSpinner";
 import styles from "./Home.module.scss";
 
 const Home = () => {
   const [data, setData] = useState({});
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const fetchEvents = async () => {
+    setLoading(true);
     const {
       data: { response },
     } = await axios.get("/api/events");
     setData(prepareEvents(response));
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -52,7 +56,7 @@ const Home = () => {
       </div>
       <div className="wrapper">
         <h2>Events</h2>
-        <Events data={data} all={false} />
+        {loading ? <UiSpinner /> : <Events data={data} all={false} />}
         <div className={styles.buttonWrapper}>
           <Button onClick={() => router.push("/events")}>All events</Button>
         </div>
