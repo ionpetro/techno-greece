@@ -1,5 +1,4 @@
 .wrapper {
-  margin-top: 48px;
   background-image: radial-gradient(
     rgba(255, 255, 255, 0.2) 2px,
     transparent 0
@@ -7,6 +6,10 @@
   background-color: black;
   background-size: 50px 50px;
   background-position: -19px -19px -50px -19px;
+
+  @media only screen and (max-width: 600px) {
+    background-size: 30px 30px;
+  }
 }
 
 .loader {

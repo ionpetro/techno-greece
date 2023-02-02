@@ -93,6 +93,7 @@ const DjRegistrationForm = () => {
         <div className={styles.field}>
           <div className={styles.label}>Short description</div>
           <textarea
+            rows={4}
             className={styles.textarea}
             placeholder={
               "eg. I'm a techno and electro DJ/producer from South France, and part of the duo Siamese Society.\n" +
