@@ -6,6 +6,7 @@ import { prepareEvents } from "../../lib/prepareEvents";
 import Techno from "../../public/images/techno.jpeg";
 import Events from "../events/Events";
 import Footer from "../footer/Footer";
+import Merch from "../merch/Merch";
 import News from "../news/News";
 import Button from "../ui/button/Button";
 import UiSpinner from "../ui/UiSpinner/UiSpinner";
@@ -60,7 +61,9 @@ const Home = () => {
         <div className={styles.buttonWrapper}>
           <Button onClick={() => router.push("/events")}>All events</Button>
         </div>
-        <h2>News</h2>
+      </div>
+      <Merch />
+      <div className="wrapper">
         <News />
       </div>
       <Footer />

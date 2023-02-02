@@ -41,14 +41,14 @@ const News = () => {
 
   return (
     <section className={styles.compWrap} id={"social"}>
+      <h2>News</h2>
       <div>
         <div className={styles.main}>
           {loading ? (
             <UiSpinner />
           ) : error ? (
             <div className={styles.error}>
-              Something went wrong with Instagram 😔 Click the insta handle
-              above to visit the official page!
+              Something went wrong with Instagram 😔
             </div>
           ) : (
             <div className={styles.media}>

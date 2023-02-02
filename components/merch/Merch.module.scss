@@ -1,0 +1,186 @@
+.wrapper {
+  margin-top: 48px;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.2) 2px,
+    transparent 0
+  );
+  background-color: black;
+  background-size: 50px 50px;
+  background-position: -19px -19px -50px -19px;
+}
+
+.loader {
+  & > * {
+    font-size: 4px;
+    margin: 0 auto;
+    width: 8px;
+    height: 8px;
+  }
+}
+
+.infoWrapper {
+  background-color: black;
+  display: flex;
+  border: 1px solid white;
+  border-radius: 16px;
+  max-width: 720px;
+  margin: 0 auto 72px auto;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.info {
+  padding: 32px;
+
+  @media only screen and (max-width: 600px) {
+    padding: 12px 12px 24px 12px;
+  }
+
+  h3 {
+    margin: 12px 0 24px 0;
+    text-transform: capitalize;
+    font-size: 2.2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+
+    span {
+      background: -webkit-linear-gradient(
+        180deg,
+        rgb(145, 31, 143) 0%,
+        rgba(187, 38, 184, 1) 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.text {
+  font-size: 1.4rem;
+}
+
+.image {
+  position: relative;
+  height: 580px;
+  min-width: 320px;
+
+  img {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    height: 200px;
+    width: 100%;
+
+    img {
+      border-top-right-radius: 16px;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
+
+.specs {
+  display: flex;
+  margin: 12px 0;
+
+  & > :first-child {
+    margin-right: 24px;
+  }
+}
+
+.colors {
+  display: flex;
+  margin-top: 12px;
+
+  & > :first-child {
+    margin-right: 8px;
+  }
+}
+
+.color {
+  align-items: center;
+  background-color: grey;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  padding: 4px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.active {
+  background-image: linear-gradient(144deg, rgba(187, 38, 184, 1), #000dff);
+  padding: 3px;
+}
+
+.color:active,
+.color:hover {
+  outline: 0;
+}
+
+.color span {
+  margin: 4px;
+  padding: 12px;
+  border-radius: 50%;
+  transition: 300ms;
+}
+
+.black {
+  background-color: black;
+}
+
+.white {
+  background-color: white;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: grey;
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-left: 0;
+  margin-bottom: 12px;
+}
+
+.select {
+  padding: 8px;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  font-size: 18px;
+  min-width: 80px;
+}
+
+.input {
+  color: white;
+  max-width: 280px;
+  margin-bottom: 32px;
+  padding: 12px;
+  background-color: black;
+  border: 1px solid white;
+  font-family: "Alumni Sans", sans-serif;
+  font-size: 1.3rem;
+
+  &:focus {
+    border-image-source: linear-gradient(
+      144deg,
+      rgba(187, 38, 184, 1),
+      #000dff
+    );
+    border-image-slice: 1;
+    outline: none;
+  }
+}

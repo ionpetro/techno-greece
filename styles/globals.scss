@@ -5,6 +5,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Alumni Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.hide-scroll {
+  overflow: hidden !important;
 }
 
 .wrapper {

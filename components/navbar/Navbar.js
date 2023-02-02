@@ -6,7 +6,8 @@ import Image from "next/image";
 export const menuItems = [
   { name: "home", href: "" },
   { name: "events", href: "events" },
-  { name: "news", href: "news" },
+  { name: "merch", href: "/#merch" },
+  { name: "news", href: "/#social" },
 ];
 
 const Navbar = () => {
