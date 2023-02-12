@@ -15,8 +15,10 @@ body {
 .wrapper {
   margin: auto;
   max-width: 1250px;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   h2 {
     font-size: 4rem;
