@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>👽 Techno Greece</title>
+        <title>Techno Greece</title>
       </Head>
       <Navbar />
       <Component {...pageProps} />

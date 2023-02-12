@@ -2,7 +2,7 @@
   position: relative;
   text-align: center;
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   flex-direction: column;
   align-items: center;
@@ -22,7 +22,7 @@
 .imgFilter {
   position: absolute;
   background: #160898;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   opacity: 0.2;
 }
