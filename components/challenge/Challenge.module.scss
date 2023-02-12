@@ -1,0 +1,43 @@
+.form {
+  margin: auto;
+}
+
+.question {
+  font-size: 1.5rem;
+}
+
+.note {
+  color: grey;
+  margin-top: -24px;
+  margin-bottom: 24px;
+}
+
+.input {
+  color: white;
+  max-width: 280px;
+  margin-bottom: 32px;
+  padding: 12px;
+  background-color: black;
+  border: 1px solid white;
+  font-family: "Alumni Sans", sans-serif;
+  font-size: 1.3rem;
+
+  &:focus {
+    border-image-source: linear-gradient(
+      144deg,
+      rgba(187, 38, 184, 1),
+      #000dff
+    );
+    border-image-slice: 1;
+    outline: none;
+  }
+}
+
+.error {
+  //color: red;
+  margin-bottom: 12px;
+}
+
+.link {
+  color: rgba(187, 38, 184, 1);
+}

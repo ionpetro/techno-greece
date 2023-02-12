@@ -1,0 +1,39 @@
+.wrapper {
+  margin: auto;
+  text-align: center;
+  font-size: 1.1rem;
+
+  h1 {
+    margin-top: -12px;
+    text-align: center;
+  }
+
+  span {
+    text-shadow: 0.04em 0.03em 0 #000dff,
+      -0.03em -0.04em 0 rgba(187, 38, 184, 1);
+  }
+
+  ul {
+    padding: 0;
+  }
+}
+
+.match {
+  width: 120px;
+  height: 120px;
+  transform: scale(0.7);
+  animation: breath 4s linear forwards;
+}
+
+.confetti {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+
+  display: block;
+  margin: 0 auto;
+  user-select: none;
+  pointer-events: none;
+}

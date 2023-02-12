@@ -4,13 +4,13 @@ import Footer from "../../components/footer/Footer";
 
 const ChallengePage = () => {
   return (
-    <>
+    <div className={"content"}>
+      <h2 className={"challengeHeading"}>Challenge</h2>
       <div className="wrapper">
-        <h2 className={"heading"}>Challenge</h2>
         <Challenge />
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

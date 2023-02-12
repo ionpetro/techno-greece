@@ -1,0 +1,13 @@
+.wrapper {
+  text-align: center;
+
+  h1 {
+    margin-top: -20px;
+  }
+
+  img {
+    width: 120px;
+    height: 120px;
+    animation: shake 1s linear infinite forwards;
+  }
+}
