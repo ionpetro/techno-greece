@@ -56,15 +56,15 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <div className="wrapper">
+      {/* <div className="wrapper">
         <h2>Events</h2>
         {loading ? <UiSpinner /> : <Events data={data} all={false} />}
         <div className={styles.buttonWrapper}>
           <Button onClick={() => router.push("/events")}>All events</Button>
         </div>
-      </div>
-      <DjInvite />
-      <Merch />
+      </div> */}
+      {/* <DjInvite /> */}
+      {/* <Merch /> */}
       <div className="wrapper">
         <News />
       </div>
